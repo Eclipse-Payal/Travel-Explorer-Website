@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Travel Explorer</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet" />
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+
+<body id="home">
+    <!-- ========================== TOP BAR ========================== -->
+    <div class="bg-dark text-light py-2">
+        <div class="container d-flex justify-content-between align-items-center">
+            <div>
+                <i class="bi bi-telephone"></i> +1 234 567 890
+                <span class="ms-3"><i class="bi bi-envelope"></i> info@travelexplorer.com</span>
+            </div>
+            <div>
+                <a href="#" class="text-light me-2"><i class="bi bi-facebook"></i></a>
+                <a href="#" class="text-light me-2"><i class="bi bi-twitter"></i></a>
+                <a href="#" class="text-light"><i class="bi bi-instagram"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========================== NAVBAR ========================== -->
+    <header class="site-header bg-primary">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-dark">
+                <a class="navbar-brand fw-bold" href="#home">🌍 Travel Explorer</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#destinations">Destinations</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#blog">Blog</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ========================== HERO ========================== -->
+    <section class="hero text-center text-white d-flex align-items-center" style="height: 80vh; background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1500&q=80') center/cover no-repeat;">
+        <div class="hero-overlay bg-dark bg-opacity-50 w-100 h-100 position-absolute"></div>
+        <div class="container position-relative">
+            <h1 class="display-4 fw-bold">Discover Your Next Adventure</h1>
+            <p class="lead">Explore destinations, view stunning photos, and check the latest weather updates.</p>
+            <form id="hero-search-form" class="d-flex justify-content-center mt-4">
+                <input type="text" id="hero-search-input" class="form-control w-50 me-2" placeholder="Enter a city or destination..." required autocomplete="off">
+                <button type="submit" class="btn btn-light">Explore</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- ========================== DESTINATIONS ========================== -->
+    <section id="destinations" class="py-5 container">
+        <h2 class="mb-4">Popular Destinations</h2>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card shadow-sm">
+                    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Paris">
+                    <div class="card-body">
+                        <h5 class="card-title">Paris, France</h5>
+                        <p class="card-text">The city of lights and love, famous for the Eiffel Tower and exquisite cuisine.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card shadow-sm">
+                    <img src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Bali">
+                    <div class="card-body">
+                        <h5 class="card-title">Bali, Indonesia</h5>
+                        <p class="card-text">Tropical paradise with beautiful beaches, temples, and vibrant culture.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card shadow-sm">
+                    <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="New York">
+                    <div class="card-body">
+                        <h5 class="card-title">New York, USA</h5>
+                        <p class="card-text">The city that never sleeps, full of iconic landmarks and endless energy.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================== WEATHER ========================== -->
+    <section id="weather" class="py-5 bg-light">
+        <div class="container">
+            <h2>Weather Info</h2>
+            <div id="weather-result" class="p-3 border rounded bg-white">Search for a city to see the weather.</div>
+        </div>
+    </section>
+
+    <!-- ========================== PHOTOS ========================== -->
+    <section id="photos" class="py-5 container">
+        <h2>Photos</h2>
+        <div id="photo-grid" class="photo-grid"></div>
+    </section>
+
+    <!-- ========================== BLOG ========================== -->
+    <section id="blog" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="mb-4">Travel Blog</h2>
+            <div class="row g-4" id="blog-container">
+                <!-- Blogs dynamically injected -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================== ABOUT ========================== -->
+    <section id="about" class="py-5 container">
+        <h2 class="mb-4">About Us</h2>
+        <p>Travel Explorer is your guide to discovering amazing destinations, weather updates, photos, and cultural insights from around the globe.</p>
+    </section>
+
+    <!-- ========================== CONTACT ========================== -->
+    <section id="contact" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="mb-4">Contact Us</h2>
+            <form class="row g-3">
+                <div class="col-md-6">
+                    <input type="text" class="form-control" placeholder="Your Name" required>
+                </div>
+                <div class="col-md-6">
+                    <input type="email" class="form-control" placeholder="Your Email" required>
+                </div>
+                <div class="col-12">
+                    <textarea class="form-control" rows="4" placeholder="Your Message"></textarea>
+                </div>
+                <div class="col-12">
+                    <button type="submit" class="btn btn-primary">Send</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- ========================== FOOTER ========================== -->
+    <footer class="bg-dark text-light pt-4">
+        <div class="container d-flex flex-wrap justify-content-between">
+            <div class="mb-3">
+                <h5>About Travel Explorer</h5>
+                <p>Your trusted companion for discovering amazing travel destinations worldwide.</p>
+            </div>
+            <div class="mb-3">
+                <h5>Quick Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#destinations" class="text-light">Destinations</a></li>
+                    <li><a href="#blog" class="text-light">Blog</a></li>
+                    <li><a href="#contact" class="text-light">Contact</a></li>
+                    <li><a href="#" class="text-light">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="mb-3">
+                <h5>Follow Us</h5>
+                <a href="#" class="text-light me-2"><i class="bi bi-facebook"></i></a>
+                <a href="#" class="text-light me-2"><i class="bi bi-twitter"></i></a>
+                <a href="#" class="text-light"><i class="bi bi-instagram"></i></a>
+            </div>
+        </div>
+        <div class="bg-secondary text-center py-2 mt-3">
+            <p class="mb-0">© 2025 Travel Explorer. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- ========================== SCRIPTS ========================== -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
